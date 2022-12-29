@@ -73,5 +73,5 @@ function writePassword(){
     passwordText.value = password;
 }
 
-generate.addEventListener("click",() => {password.value = generatePassword();
+generateBtn.addEventListener("click",() => {password.value = writePassword();
 });
