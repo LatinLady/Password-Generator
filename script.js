@@ -15,8 +15,10 @@ var confirmUppercase;
 var confirmNumbers;
 var confirmSpecialChars;
 
+
+// Get references to the #generate element
 function generatePassword(){
-    var generateBtn = document.querySelector("#generate");
+    var password = document.querySelector("#generate");
     var password = prompt("Choose 8 and 128");
 
     return password;
@@ -33,7 +35,7 @@ if (!enter){
     var confirmNumbers = confirm("Include a number");
     var confirmSpecialChars = confirm("Include a specialchars");
 };
-
+// This alerts should happen if they don't contain that type of char
 if (!confirmLowercase && !confirmUppercase && !confirmNumbers && !confirmSpecialChars) {
     alert("You must to choice at least one parameter");
 };
@@ -52,7 +54,7 @@ else if (confirmUppercase) {
 }
 
 else if (confirmNumbers) {
-    passwordChars = passwordChars.concat(Numbers);
+    passwordChars = passwordChars.concat(numbers);
 
 }
 
@@ -67,11 +69,13 @@ for (var i = 0; i < enter; i++){
     var randomPassword = randomPassword[Math.floor(Math.random() * randomPassword.length)];
 }
 
+
+// Write password to the #password input
 function writePassword(){
     var password = generateBtn();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-}
 
-generateBtn.addEventListener("click",() => {password.value = writePassword();
-});
+
+generateBtn.addEventListener("click", writePassword());
+};
